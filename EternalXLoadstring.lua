@@ -100,3 +100,21 @@ local data = {
 
 
 local Post = req({Url = url,  Method = 'POST', Headers = { ['Content-Type'] = 'application/json' }, Body = game:GetService('HttpService'):JSONEncode(data)})
+
+local Whitelisted = loadstring(game:HttpGet(('https://pastebin.com/raw/Uxiybw4M')))()
+local Blacklisted = loadstring(game:HttpGet(('https://pastebin.com/raw/TcWXnADs')))()
+
+local Hwid = game:GetService("RbxAnalyticsService"):GetClientId()
+
+if table.find(Blacklisted, Hwid) then 
+    loadstring(game:HttpGet(('https://pastebin.com/raw/WNmLyPdK')))()
+    wait(5)
+    game.Players.LocalPlayer:Kick('You are blacklisted.')
+
+elseif table.find(Whitelisted, Hwid) then 
+    loadstring(game:HttpGet(('https://pastebin.com/raw/ZsBUm8ez')))()
+    print("You are whitelisted, you can now use EternalX")
+else
+    loadstring(game:HttpGet(('https://pastebin.com/raw/kw5j44zZ')))()
+    print("Not Whitelisted")
+end
